@@ -1,5 +1,5 @@
 <template>
-  <div id="appj"> 
+  <div id="app"> 
   <head>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
