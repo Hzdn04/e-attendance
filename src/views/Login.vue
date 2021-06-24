@@ -30,7 +30,7 @@
                       <button type="submit" class="btn btn-primary btn-block">
                         Login
                       </button>
-                      <a class="btn btn-danger" href="/home"></a>
+                      <a class="" href="/home">home</a>
                     </div>
                 </div>
               </form>
