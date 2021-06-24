@@ -114,7 +114,7 @@
 
 //import HelloWorld from '@/components/HelloWorld.vue'
 
-import "@/assets/js/scripts.js"
+//import "@/assets/js/scripts.js"
 
 import "@/assets/css/styles.css";
 
