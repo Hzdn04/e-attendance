@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
+import About from '../views/About.vue'
 
 import Dashboard from '../views/admin/Dashboard.vue'
 import Employee from '../views/admin/Employee.vue'
@@ -46,8 +47,8 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'about',
-    component: about
+    name: 'About',
+    component: About
   }
 ]
 
