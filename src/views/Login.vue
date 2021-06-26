@@ -4,7 +4,7 @@
       <div class="row">
         <div class="mt-4"></div>
         <div class="col-md-4 offset-md-4 mb-3 text-center mt-5">
-          <a href="/home">
+          <a href="#/home">
             <img src="@/assets/img/main.png" width="255px" alt="">
           </a>
         </div>
