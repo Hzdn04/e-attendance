@@ -30,7 +30,7 @@
             </div>
         </header>
         <!-- task-->
-        <section class="page-section bg-primary" id="task">
+        <section class="page-section bg-primary-home" id="task">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">

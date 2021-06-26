@@ -30,7 +30,6 @@
                       <button type="submit" class="btn btn-primary btn-block">
                         Login
                       </button>
-                      <a class="" href="/home">home</a>
                     </div>
                 </div>
               </form>
@@ -67,7 +66,7 @@ name: 'Login',
         formData.append("password", this.password);
 
         const options = {
-          url: "localhost:8000/token/login",
+          url: "http://localhost:8000/api/token/login",
           method: "post",
           headers: {
             "Content-Type": "multipart/form-data"
@@ -81,7 +80,7 @@ name: 'Login',
 
             if (token) {
               this.$router.push({
-                name: "Backend",
+                name: "Dashboard",
                 params: {
                   token: token
                 }

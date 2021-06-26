@@ -84,6 +84,15 @@
         </b-card>
       </div>
     </div>
+            <div>
+              <p class="text-success" v-if="token">
+                Halaman ini diakses DENGAN autentikasi login dan token !!
+              </p>
+              <p class="text-danger" v-else>
+                Halaman ini diakses TANPA autentikasi login dan token !!
+              </p>
+            </div>
+
     <div class="row isi mt-3 ml-4 mr-2">
         <ChartUser />
     </div>
@@ -100,6 +109,21 @@ name: 'Dashboard',
   components: {
     Navbar,
     ChartUser
+  },
+
+  data() {
+    return {
+      token: "",
+      currentRouteName: ""
+    };
+  },
+  created() {
+    this.currentRouteName = this.$route.name;
+    const token = this.$route.params.token;
+    if (token) {
+      this.token = token;
+      alert("Anda mengakses halaman Backend dengan token : " + "\n\n" + token);
+    }
   }
 }
 
