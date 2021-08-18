@@ -2,13 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 
 import Dashboard from '../views/admin/Dashboard.vue'
 import Employee from '../views/admin/Employee.vue'
-import RegisterAdmin from '../views/admin/RegisterAdmin.vue'
-import User from '../views/admin/User.vue'
-
+import Register from '../views/admin/Register.vue'
+import Task from '../views/admin/Task.vue'
 
 Vue.use(VueRouter)
 
@@ -18,6 +16,12 @@ const routes = [
     name: 'Login',
     component: Login
   },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
+  
 // Route for Admin
 {
   path: '/dashboard',
@@ -30,29 +34,20 @@ const routes = [
   component: Employee
 },
 {
-  path: '/registerAdmin',
-  name: 'RegisterAdmin',
-  component: RegisterAdmin
+  path: '/register',
+  name: 'Register',
+  component: Register
 },
 {
-  path: '/User',
-  name: 'User',
-  component: User
-},
-// Route for user
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  }
+  path: '/task',
+  name: 'Task',
+  component: Task
+}
 ]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 

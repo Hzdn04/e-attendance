@@ -23,6 +23,9 @@ Vue.use(axios)
 
 Vue.config.productionTip = false
 
+axios.defaults.baseURL = 'http://localhost:8000/';
+
+axios.defaults.headers.common['Authorization'] = 'Bearer' + localStorage.getItem('token');
 
 new Vue({
   router,

@@ -51,8 +51,7 @@ name: 'Login',
   data() {
     return {
       email: "",
-      password: "",
-      currentRouteName: ""
+      password: ""
     };
   },
 
@@ -61,39 +60,56 @@ name: 'Login',
   },
 
   methods: {
-    onSubmit() {
-      if (this.email.trim() && this.password.trim()) {
-        let formData = new FormData();
-        formData.append("email", this.email.trim());
-        formData.append("password", this.password);
+    async onSubmit() {
+      const response = await axios.post('api/token/login', {
+        email: this.email,
+        password: this.password
+      });
 
-        const options = {
-          url: "http://localhost:8000/api/token/login",
-          method: "post",
-          headers: {
-            "Content-Type": "multipart/form-data"
-          },
-          data: formData
-        };
+      localStorage.setItem('token', response.data.token);
+      
+      console.log(response.data.token)
+      //this.$router.push('/Dashboard');
+      if(response.data.token != null){
 
-        axios(options)
-          .then(response => {
-            const token = response.data.token;
-
-            if (token) {
-              this.$router.push({
-                name: "Dashboard",
-                params: {
-                  token: token
-                }
-              });
-            }
-          })
-          .catch(e => {
-            alert(e + "\n" + "email / password yang dimasukkan salah.");
-          });
+        alert('Bener bro !!!')
+        this.$router.push('/Dashboard');
+      }else{
+        alert('Gagal bro !!!')
       }
     }
+      // if (this.email.trim() && this.password.trim()) {
+      //   let formData = new FormData();
+      //   formData.append("email", this.email.trim());
+      //   formData.append("password", this.password);
+
+      //   const options = {
+      //     url: "http://localhost:8000/api/token/login",
+      //     method: "post",
+      //     headers: {
+      //       "Content-Type": "multipart/form-data"
+      //     },
+      //     data: formData
+      //   };
+
+    //     axios(options)
+    //       .then(response => {
+    //         const token = response.data.token;
+
+    //         if (token) {
+    //           this.$router.push({
+    //             name: "Dashboard",
+    //             params: {
+    //               token: token
+    //             }
+    //           });
+    //         }
+    //       })
+    //       .catch(e => {
+    //         alert(e + "\n" + "email / password yang dimasukkan salah.");
+    //       });
+    //   }
+    // }
   }
 };
 </script>

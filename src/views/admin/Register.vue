@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="col-md-6 m-auto">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
@@ -85,7 +85,7 @@
 import axios from 'axios'
 
 export default {
-name: '',
+name: 'Register',
   components: {
     
   },
@@ -107,7 +107,7 @@ name: '',
   methods: {
      async handleSubmit(){
         //const response = axios.post('http://localhost:8000/token/login', this.form) 
-        const response = await axios.post('backOffice/register', {
+        await axios.post('http://localhost:8000/backOffice/register', {
             name: this.name,
             email: this.email,
             password: this.password,
@@ -119,7 +119,7 @@ name: '',
             role: this.role,
         });
 
-        console.log(response);
+        this.$router.push('/');
       }
   },
 }

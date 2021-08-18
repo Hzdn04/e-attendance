@@ -1,8 +1,7 @@
 <template>
 <div>
-    <div class="head">
-        <Navbar />
-    </div>
+   <nav-bar-component/>
+      <sidebar-component/>
     <div class="main">
     <div class="row isi ml-4 mr-2">
       <b-container fluid>
@@ -120,12 +119,14 @@
 </template>
 
 <script>
-import Navbar from '@/components/admin/Navbar.vue'
+import NavBarComponent from '@/components/NavBarComponent'
+import SidebarComponent from '@/components/SidebarComponent'
 
 export default {
 name: 'Task',
   components: {
-    Navbar,
+    NavBarComponent,
+    SidebarComponent
   },
 
 data() {

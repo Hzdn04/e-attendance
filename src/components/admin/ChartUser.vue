@@ -1,11 +1,11 @@
 <template>
-  <div class="col-lg-12 mt-3">
+  <div class="col mt-3">
        <!-- Bar chart -->
             <div class="card card-primary card-outline">
               <div class="card-header bg-primary">
                 <h3 class="card-title">
                   <i class="far fa-chart-bar"></i>
-                  Bar Chart
+                  Punctuality
                 </h3>
 
                 <div class="card-tools">
